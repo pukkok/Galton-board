@@ -1,5 +1,8 @@
+import ballBtns from "./buttons/ball_btns.js"
+const controls = document.querySelector('.controls')
+
 const buttons = () => {
-  console.log('안녕하세요')
+  ballBtns(controls)
 }
 
-export default buttons
+export default buttons 
