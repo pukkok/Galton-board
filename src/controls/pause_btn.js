@@ -1,6 +1,6 @@
 const pauseBtn = () => {
   const btn = document.createElement('button')
-  btn.innerHTML = "초기화"
+  btn.innerHTML = "정지"
   btn.className = "pause-btn"
   return btn
 }
