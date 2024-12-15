@@ -1,4 +1,4 @@
-import { rows, pinRadius, pinVerticalGap, topY } from './constants.js'
+import { rows, pinVerticalGap, topY } from './constants.js'
 import { canvas } from './setupCanvas.js'
 
 // pinHorizontalGap는 canvas 및 rows 정보 필요
