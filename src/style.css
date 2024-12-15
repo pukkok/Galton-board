@@ -9,6 +9,9 @@ canvas {
   margin: 20px auto;
 }
 .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 select, button {
