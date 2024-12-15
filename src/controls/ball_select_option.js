@@ -2,6 +2,7 @@ import ballCounts from "../ballCounts.js"
 
 const ballSelectOption = () => {
   const select = document.createElement('select')
+  select.id = "ballCountSelect"
   const options = ballCounts.map(count => {
     const option = document.createElement('option')
     option.value = count
