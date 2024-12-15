@@ -1,39 +1,21 @@
 body {
   text-align: center;
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
 }
 canvas {
+  background: #eee;
   display: block;
   margin: 20px auto;
-  border: 1px solid black;
 }
 .controls {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  height: 45px;
-  padding: 2px;
+  margin: 20px;
 }
-.controls button {
-  height: 40px;
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  
-  border: none;
-  border-radius: 8px;
-  
-  background-color: rgb(62, 230, 158);
-  cursor: pointer;
+select, button {
+  margin: 5px;
+  padding: 5px 10px;
 }
-.controls button:active{
-  background-color: rgb(30, 222, 139);
-  margin-top: 2px;
-}
-
-.controls .start-btn{
-  background-color: rgb(81, 81, 255);
-  color: #fff;
-}
-.controls .start-btn:active{
-  background-color: rgb(44, 44, 254);
+#currentSelection {
+  font-weight: bold;
+  color: #333;
 }
