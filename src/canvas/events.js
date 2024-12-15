@@ -1,7 +1,7 @@
-import { balls, slotBins, setDropping } from './state.js'
-import { Ball } from './ball.js'
+import { balls, slotBins, setDropping, frame } from './state.js'
+import Ball from './ball.js'
 
-function addBalls(count, frameCount) {
+const addBalls = (count, frameCount) => {
   const delayStep = 10 
   const startingFrame = frameCount
   for (let i = 0; i < count; i++) {
@@ -13,15 +13,16 @@ export function startEvent() {
   const ballCountSelect = document.getElementById('ballCountSelect')
   const selectedCount = parseInt(ballCountSelect.value, 10)
   setDropping(true)
-  // frameCount 상태값도 필요하면 state에서 가져와야 함
-  // 여기서는 frameCount를 state에서 export하고, 현재값을 읽어와야 함
-  addBalls(selectedCount, /* frameCount from state */)
+  addBalls(selectedCount, frame.count)
 }
 
 export function pauseEvent() {
   setDropping(false)
-  balls = balls.filter(ball => ball.started || ball.done)
+  const filtered = balls.filter(ball => ball.started || ball.done);
+  balls.length = 0      // 기존 balls 내용 제거
+  balls.push(...filtered) // 새로운 filtered 결과를 다시 채워넣기
 }
+
 
 export function resetEvent() {
   for (let i = 0; i < slotBins.length; i++) {
