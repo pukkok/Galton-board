@@ -1,8 +1,9 @@
 import { ctx, canvas } from './setupCanvas.js'
-import { pins, pinHorizontalGap } from './pins.js'
+import { pins } from './pins.js'
 import { slotBins, slotsCount, slotWidth } from './state.js'
 import { pinRadius } from './constants.js'
 
+// TODO : 핀을 생성한다. (갈림길)
 export const drawPins = () => {
   ctx.fillStyle = 'black'
   for (let r = 0; r < pins.length; r++) {
@@ -15,6 +16,7 @@ export const drawPins = () => {
   }
 }
 
+// TODO : 떨어지는 공간을 표시한다.(그래프)
 export const drawSlots = () => {
   ctx.strokeStyle = 'blue'
   for (let i = 0; i <= slotsCount; i++) {
@@ -25,7 +27,9 @@ export const drawSlots = () => {
     ctx.stroke()
   }
 
+  // * 총 공의 개수 : 슬롯(그래프) 안의 공 개수 전체 합
   const totalBalls = slotBins.reduce((a,b)=>a+b,0)
+  // ? 0 일경우 나눌 수 없기때문에 초기값 1
   const maxCount = Math.max(...slotBins) || 1
   for (let i = 0; i < slotsCount; i++) {
     const count = slotBins[i]

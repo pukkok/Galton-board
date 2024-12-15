@@ -5,18 +5,18 @@ import { slotBins, slotsCount, slotWidth, isDropping } from './state.js'
 
 class Ball {
   constructor(startDelay) {
-    this.x = canvas.width / 2
-    this.y = topY - 20
+    this.x = canvas.width / 2 // * 공이 처음 생성되는 x
+    this.y = topY - 20 // * 공이 처음 생성되는 y
     this.radius = 5
-    this.done = false
-    this.currentRow = 0
-    this.speedY = 4 + Math.random() * 2
-    this.startDelay = startDelay
-    this.started = false
+    this.done = false // * 공이 다 떨어졌는지 체크
+    this.currentRow = 0 // * 현재 행 체크
+    this.speedY = 4 + Math.random() * 2 // * 떨어지는 속도(랜덤)
+    this.startDelay = startDelay // * 시작전 딜레이
+    this.started = false // * 떨어지는 중인가?
   }
   
   update(frameCount) {
-    if (this.done) return
+    if (this.done) return // * 끝났다면 종료
     if (frameCount < this.startDelay) return
     if (!isDropping && !this.started) return
     
