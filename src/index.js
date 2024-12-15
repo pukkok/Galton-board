@@ -1,3 +1,5 @@
-import buttons from "./buttons.js";
+import ballSelectOption from "./buttons/ball_select_option.js";
+const box = document.querySelector('.controls')
 
-buttons()
+const selectOption = ballSelectOption()
+box.append(selectOption)
