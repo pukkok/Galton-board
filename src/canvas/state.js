@@ -7,7 +7,13 @@ const slotWidth = canvas.width / slotsCount
 
 let slotBins = new Array(slotsCount).fill(0)
 let balls = []
-let frameCount = 0
 let isDropping = false
+const frame = {
+  count : 0
+}
 
-export { slotBins, balls, frameCount, isDropping, slotsCount, slotWidth }
+function setDropping(value) {
+  isDropping = value
+}
+
+export { slotBins, balls, isDropping, setDropping, slotsCount, slotWidth, frame }
